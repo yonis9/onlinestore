@@ -1,0 +1,20 @@
+.backdrop {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    top: 100px;;
+    left: 0;
+    top:0;
+    z-index: 1999;
+}
+
+#x {
+    color: #F2F2F2;
+    font-size: 2em;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: 20px;
+    z-index: 3000;
+}

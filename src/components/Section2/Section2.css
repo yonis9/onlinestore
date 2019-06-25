@@ -1,0 +1,31 @@
+#sec2 {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding-bottom: 5%;
+}
+
+.image-con { 
+    padding: 5% 5% 0% 5%;
+    background: #f8f8f8;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image-con:hover {
+    cursor: pointer;
+}
+
+
+.image-con img {
+    height: auto;
+    width: 32vw;
+}
+
+.image-con h3 {
+    color: #333;
+    text-align: center;
+}

@@ -1,0 +1,109 @@
+.header-con
+ {
+height: 100vh;
+max-height: 550px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slide-con {
+    margin-top: 5%;
+}
+
+.text {
+    margin: 5% 10% 10% 5%;
+
+}
+
+.text button {
+    width: 100px;
+    font-family: 'Titillium Web', sans-serif;
+    border: 1px solid #333;
+    color: #333;
+    height: 40px;
+    margin-left: 80%;
+    background: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.text button:focus {
+    outline:0;
+}
+
+ .text button:hover {
+    transition: 0.3s;
+    background: #333;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+.moobile-sec1 {
+    margin-top: 30%;
+    position: relative;
+    text-align: center;
+}
+
+.brand-logo {
+    margin-left: 20vw;
+    width: 60vw;
+    height: auto;
+}
+
+.moobile-sec1 h1 {
+    font-family: 'Viga', sans-serif;
+}
+
+.moobile-sec1  img{
+    margin-top: 10%;
+    height: 100%;
+    width: 100%;
+}
+
+#text-mobile {
+    font-size: 4vw;
+    position: absolute;
+    bottom: 30%;
+    left: 30%;
+    height: 30%;
+    width: 40%;
+    background: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+#text-mobile button {
+    font-family: 'Titillium Web', sans-serif;
+    border: 1px solid #333;
+    color: #333;
+   margin: 0 20%;
+    background: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#text-mobile button:focus {
+    outline:0;
+}
+
+ #text-mobile button:hover {
+    transition: 0.3s;
+    background: #333;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+ @media only screen and (max-width: 960px){
+    .text p {
+        font-size: 0.8em;
+    }
+    .text h1 {
+        font-size: 1.5em;
+    }
+ }

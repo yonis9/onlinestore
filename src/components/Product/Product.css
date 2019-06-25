@@ -1,0 +1,74 @@
+.product-page {
+    padding: 8% 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.prodcut-page-image img {
+width: 38vw;
+height: auto;
+border: 1px solid rgba(77, 76, 76, 0.3)
+}
+
+
+
+.product-price-cart button {
+    margin-top: 5%;
+    font-family: 'Titillium Web', sans-serif;
+    border: 1px solid #333;
+    color: #333;
+    height: 40px;
+    width: 200px;
+    background: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.product-price-cart button:focus {
+    outline:0;
+}
+
+.product-price-cart button:hover {
+    transition: 0.3s;
+    background: #333;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+.product-info {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.product-info h1 {
+    margin-bottom: 0;
+}
+
+.product-description {
+    font-size: 0.9em;
+}
+
+@media only screen and (max-width: 760px) {
+    .product-page {
+        height: 900px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-info {
+        width: 90%;
+    }
+    .prodcut-page-image img {
+        width: 200px;
+        height: auto;
+    }
+    .prodcut-page-image {
+        width: 200px;
+        height: auto;
+    }
+}

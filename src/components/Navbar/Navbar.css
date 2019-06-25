@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700');
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.logo img, .sm-logo img {
+  margin-top:10px;
+height: 25px;
+width: auto;
+}
+
+.link {
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  color: #333;
+  padding: 10px 0px;
+  letter-spacing: 1px;
+  font-size: 12.5px;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu {
+  top: 0;
+    position: fixed;
+    z-index: 2000;
+    display: flex;
+    
+    align-items: center;
+  background: #F2F2F2;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  padding: 10px 2rem;
+  height: 70px;
+  font-family: 'Titillium Web', sans-serif;
+  transition: 1s;
+}
+.menu ol {
+  padding-left: 0px;
+}
+
+.leftnav{
+    margin-left: 180px;
+}
+
+.logo {
+	float: left;
+	position: absolute;
+	top: 10px;
+	left: 2rem;
+	width: 60px;
+	height: 50px;
+}
+.menu-item {
+  list-style-type: none;
+  display: inline;
+  position: relative;
+  margin: 15px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+}
+
+.menu-item:before {
+  position: absolute;
+  content: "";
+  border-bottom: 3px solid #333;
+  overflow: hidden;
+  width: 0%;
+  left: 50%;
+  top: 40px;
+  transition: 0.2s ease-in-out 0.15s;
+}
+
+.menu-item:hover:before {
+  width: 100%;
+  left: 0%;
+  transition: 0.2s ease-in-out;
+}
+
+.sub-menu {
+  position: absolute;
+  right:0;
+  background: #F2F2F2;
+  font-family: 'Titillium Web', sans-serif;
+  top: 50px;
+  padding: 0;
+  text-align: left;
+  box-shadow: 0px 4px 20px -5px rgba(0, 0, 0, 0.15);
+  max-height: 0;
+  width: 150px;
+  opacity: 0;
+  transition: 0.45s ease all 0.1s;
+  z-index: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 0;
+  transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) all 0.1s;
+  visibility: hidden;
+}
+.menu-item:nth-child(n + 2):nth-child(-n + 4):hover .sub-menu {
+  max-height: 200px;
+  max-width: 200px;
+  opacity: 1;
+    -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+  transition-delay: 0.15s;
+  visibility: visible;
+}
+.sub-menu .menu-item {
+  display: block;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.menu-item:nth-child(n + 2):nth-child(-n + 4) .plus-icon {
+  width: 15px;
+  height: 15px;
+  stroke: #333;
+  margin-left: 2px;
+  margin-bottom: -5px;
+}
+
+.menu-item:nth-child(n + 2):nth-child(-n + 4) .sub-menu-item {
+  list-style-type: none;
+  display: block;
+  margin: 15px;
+  position: relative;
+  opacity: 0;
+  transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) all 0.1s;
+  visibility: hidden;
+}
+.menu-item:nth-child(n + 2):nth-child(-n + 4):hover .sub-menu {
+  max-height: 200px;
+  max-width: 200px;
+  opacity: 1;
+}
+.menu-item:nth-child(n + 2):nth-child(-n + 4):hover .sub-menu-item .link {
+  transition: 0.15s ease all;
+}
+.menu-item:nth-child(n + 2):nth-child(-n + 4):hover .sub-menu-item .link:hover {
+  color: grey;
+}
+.menu-item:nth-child(n + 2):nth-child(-n + 4):hover .sub-menu-item {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+  transition-delay: 0.15s;
+  visibility: visible;
+}
+
+
+.right {
+margin-left: auto;
+}
+
+
+#qty {
+  padding: 0 5px;
+  background: #333;
+  color: white;
+  border-radius: 20px;
+  margin-left: 5px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+  .smmenu {
+    position: fixed;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    top: 0;
+  background: #F2F2F2;
+  margin: auto;
+  width: 100%;
+  padding: 10px 2rem;
+  height: 70px;
+  font-family: 'Titillium Web', sans-serif;
+  transition: 1s;
+}
+
+.smmenu ul {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+}
+
+
+.sm-menu-icon {
+color: #333;
+}
+
+.sm-menu-icon:hover{
+    cursor: pointer;
+}
+
+
+#cart-icon {
+  margin-left: auto;
+}
+
+#menu-icon {
+  margin-left: 0;
+}
+
+.sm-logo {
+  margin-left: 20px;
+}
+
+h1 {
+  color: #333;
+}

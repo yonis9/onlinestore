@@ -1,0 +1,56 @@
+.sec3 {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-products {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(3, 250px);
+    justify-content: center;
+}
+
+@media only screen and (max-width: 760px) {
+    .home-products {
+        grid-template-columns: repeat(auto-fill, 250px);
+    }
+
+    #sec3btn {
+        margin: 5% 30%!important ;
+    }
+}
+
+
+
+#sec3btn {
+    margin-top: 5%;
+    font-family: 'Titillium Web', sans-serif;
+    border: 1px solid #333;
+    color: #333;
+    height: 40px;
+    margin: 5% 40%;
+    background: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.sec3 a {
+    color: #333;
+}
+
+.sec3 a:hover {
+    color: #ffffff;
+}
+
+#sec3btn:focus {
+    outline:0;
+}
+
+ #sec3btn:hover {
+    transition: 0.3s;
+    background: #333;
+    color: #ffffff;
+    cursor: pointer;
+}

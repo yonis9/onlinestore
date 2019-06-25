@@ -1,0 +1,74 @@
+
+.sec4 {
+    padding-top: 5%;
+    padding-bottom: 0.5%;
+    background: white;
+    margin-bottom: 0;
+}
+
+
+.pros-con {
+padding-top: 2%;
+    color: #F2F2F2;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    background: #333;
+}
+
+.pros-con img {
+    margin-left:35%;
+    height: 64px;
+    width: 64px;
+}
+
+.pros-con .pros {
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#quote {
+    background: #f8f8f8;
+    margin: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+#quote h1 {
+    font-family: 'Major Mono Display', monospace;
+
+    font-weight: 500;
+    width: 50vw;
+    margin-left: 25%
+}
+
+#quote h2 {
+ margin-top: 0;
+ margin-bottom: 0;
+    margin-left: 60%
+}
+
+@media only screen and (max-width: 760px) {
+    .pros-con img {
+        height: 32px;
+        width: 32px;
+    }
+
+    .pros p {
+        font-size: 0.8em;
+    }
+
+    #quote h1, 
+    #quote h2 {
+        font-size: 1rem;
+    }
+}
