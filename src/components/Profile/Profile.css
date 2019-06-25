@@ -47,6 +47,7 @@
 }
 
 
+
 @media only screen and (max-width: 768px) {
 
     .order-con {
@@ -62,7 +63,12 @@
         height: 80%;
         width: auto;
     }
-
+    #no-orders {
+    
+        margin-top: 15%;
+        padding-bottom: 100px;
+    
+    }
 }
 
 @media only screen and (max-width: 946px) and (min-width: 769px) {

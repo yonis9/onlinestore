@@ -6,6 +6,7 @@ class Profile extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            isLoading : true,
             orders: []
         }
     }
@@ -20,8 +21,8 @@ class Profile extends Component {
            data.map(order => {
             return  order['cart'] = this.props.genarateArray(order.cart)
             });
-            this.setState({orders: data})
-
+            this.setState({orders: data, isLoading: false})
+            
         })
         
         
@@ -31,13 +32,19 @@ class Profile extends Component {
         if (!this.props.isLogedIn) return (    <div className='profile-con'>
         <h1>You Should Log In To See Your Profile</h1>
         </div>)
-const { orders } = this.state;
+const { orders, isLoading } = this.state;
         return (
             <div>
                 <div className='profile-con'>
                     <h1>Hello, {this.props.user.name}</h1>
-                    { !orders.length 
-                    ? <h3>You Have No Orders Yet</h3>
+                   
+                   {
+                       isLoading ?
+                       <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                       :
+                    
+                     !orders.length 
+                    ? <h3 id='no-orders'>You Have No Orders Yet</h3>
                     : <h3>Your Orders:</h3>
                     }
                     { 
