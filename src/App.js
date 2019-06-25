@@ -15,7 +15,7 @@ import Register from './components/Register/Register';
 import Signin from './components/Signin/Signin';
 import Profile from './components/Profile/Profile'
 import Error from './components/Error/Error';
-
+require('dotenv').config()
 
 class App extends Component {
   constructor() {
@@ -160,7 +160,7 @@ onRemoveCart = (id) => {
             <Route path='/register'  render={(routeProps) => (<Register {...routeProps} loadUser={this.loadUser} redirect={redirect} />)} />
             <Route path='/signin' render={(routeProps) => (<Signin {...routeProps} loadUser={this.loadUser} redirect={redirect} />)}/>
             <Route path='/product/:id' render={(routeProps) => (<Product {...routeProps}  onAddToCart={this.onAddToCart} />)} />
-            <StripeProvider apiKey={process.env.STRIPE_PK_KEY}>
+            <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PK_KEY}>
             <Elements>
             <Route path='/checkout' render={(routeProps) => (<CheckoutForm {...routeProps} cart={cart} genarateArray={genarateArray}  emptyCart={this.emptyCart} user={user} isLogedIn={isLogedIn}/>)}/>
           </Elements>
