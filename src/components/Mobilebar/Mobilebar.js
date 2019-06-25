@@ -30,7 +30,7 @@ return (
     
       <ol className="msub-menu">
         <li className="mmenu-item"><NavLink  to="/cart"><span className='mlink'><FontAwesomeIcon icon="shopping-cart" /> Your Cart {qty ? <span id='qty'>{qty}</span> : <span></span>}</span></NavLink ></li>
-        <li className="mmenu-item"><span className='mlink'><FontAwesomeIcon icon="user" /> User Managmant <FontAwesomeIcon icon="angle-down"/></span>
+        <li className="mmenu-item"><span className='mlink'><FontAwesomeIcon icon="user" /> User <FontAwesomeIcon icon="angle-down"/></span>
 {          isLogedIn ?   
    <ol className="msub-menu">
         <li className="msub-menu-item"><NavLink  to="/profile"><span className='sm-m-link'>User Account</span></NavLink ></li>
