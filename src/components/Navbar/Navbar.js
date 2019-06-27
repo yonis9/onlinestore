@@ -33,7 +33,7 @@ const Navbar =({ winWidth, onMenuClick, isLogedIn, name, qty, logOut }) => {
            { isLogedIn ? 
            <li className="menu-item"><span className='link'><FontAwesomeIcon icon="user" /> {name}<FontAwesomeIcon icon="angle-down"/></span>
            <ol className="sub-menu">
-           <li className="sub-menu-item"><NavLink  to="/profile"><span className='link'>User Account</span></NavLink ></li>
+           <li className="sub-menu-item"><NavLink  to="/profile"><span className='link'>Profile</span></NavLink ></li>
            <li className="sub-menu-item"><NavLink  to="/"><span className='link' onClick={logOut}>Logout</span></NavLink ></li>
            </ol>
            </li>

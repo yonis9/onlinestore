@@ -33,7 +33,7 @@ return (
         <li className="mmenu-item"><span className='mlink'><FontAwesomeIcon icon="user" /> User <FontAwesomeIcon icon="angle-down"/></span>
 {          isLogedIn ?   
    <ol className="msub-menu">
-        <li className="msub-menu-item"><NavLink  to="/profile"><span className='sm-m-link'>User Account</span></NavLink ></li>
+        <li className="msub-menu-item"><NavLink  to="/profile"><span className='sm-m-link'>Profile</span></NavLink ></li>
         <li className="msub-menu-item"><NavLink  to="/"><span className='sm-m-link' onClick={logOut}>Logout</span></NavLink ></li>
       </ol>
       :

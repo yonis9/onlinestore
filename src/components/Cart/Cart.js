@@ -31,7 +31,7 @@ const Cart = ( { cart, genarateArray, onRemoveCart }) => {
         
         :
 
-        <div className='cart-container'> 
+        <div className='cart-container empty'> 
             <h1>Your Cart Is Empty</h1>
             <Link to="/shop"><button id='payment-btn'>Go To Shop</button></Link>
             

@@ -63,7 +63,7 @@ class Signin extends Component {
     <label ><b>Password</b></label>
     <input onChange={this.onPasswordChange} type="password" placeholder="Enter Password" name="psw" required />
     <hr/>
-    <button onClick={this.onButtonSubmit} className="registerbtn">Register</button>
+    <button onClick={this.onButtonSubmit} className="registerbtn">Sign in</button>
   </div>
 
   <div className="container signin">

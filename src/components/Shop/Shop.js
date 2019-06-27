@@ -56,7 +56,7 @@ class Shop extends Component {
     return (
         <div>
             <ScrollToTop />
-            {!products.length ? <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            {!products.length ? <div id='mobile-marign-load' className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
             :
        <div className='shop-container'>
           <ul>
