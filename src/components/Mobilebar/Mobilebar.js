@@ -26,25 +26,24 @@ return (
   
     <li className="mmenu-item"><NavLink  to="/" ><span className='mlink' >Home</span></NavLink ></li>
     <li className="mmenu-item"><NavLink to="/shop"><span className='mlink'>Shop</span></NavLink></li>
-    <li className="mmenu-item">
     
-      <ol className="msub-menu">
-        <li className="mmenu-item"><NavLink  to="/cart"><span className='mlink'><FontAwesomeIcon icon="shopping-cart" /> Your Cart {qty ? <span id='qty'>{qty}</span> : <span></span>}</span></NavLink ></li>
-        <li className="mmenu-item"><span className='mlink'><FontAwesomeIcon icon="user" /> User <FontAwesomeIcon icon="angle-down"/></span>
+    
+      
+        <li className="mmenu-item"><NavLink  to="/cart"><span className='mlink'> Cart {qty ? <span id='qty'>{qty}</span> : <span></span>}</span></NavLink ></li>
+    
 {          isLogedIn ?   
-   <ol className="msub-menu">
-        <li className="msub-menu-item"><NavLink  to="/profile"><span className='sm-m-link'>Profile</span></NavLink ></li>
-        <li className="msub-menu-item"><NavLink  to="/"><span className='sm-m-link' onClick={logOut}>Logout</span></NavLink ></li>
+        <ol>
+        <li className="mmenu-item"><NavLink  to="/profile"><span className='mlink'>Profile</span></NavLink ></li>
+        <li className="mmenu-item"><NavLink  to="/"><span className='mlink' onClick={logOut}>Logout</span></NavLink ></li>
       </ol>
       :
-      <ol className="msub-menu">
-      <li className="msub-menu-item"><NavLink  to="/signin"><span className='sm-m-link'>Login</span></NavLink ></li>
-      <li className="msub-menu-item"><NavLink  to="/register"><span className='sm-m-link'>Register</span></NavLink ></li>
-    </ol>
-    }
-        </li>
+      <ol>
+      <li className="mmenu-item"><NavLink  to="/signin"><span className='mlink'>Login</span></NavLink ></li>
+      <li className="mmenu-item"><NavLink  to="/register"><span className='mlink'>Register</span></NavLink ></li>
       </ol>
-    </li>
+    }
+       
+    
 
 
   </ol>
