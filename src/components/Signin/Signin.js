@@ -9,9 +9,19 @@ class Signin extends Component {
         super(props)
         this.state= {
 			email: '',
-			password: ''
+      password: '',
+      message: ''
         }
     }
+
+    componentDidUpdate(prevProps, prevState) {
+      if(this.state.message !== '' ){
+          window.setTimeout(  () => {
+             this.setState({ message: '' })
+            } ,5000)
+
+      }
+  }
 
 	onEmailChange = (event) => {
 		this.setState({email: event.target.value})
@@ -21,7 +31,8 @@ class Signin extends Component {
 		this.setState({password: event.target.value})
     }
     
-    onButtonSubmit = () => {
+    onButtonSubmit = (e) => {
+      e.preventDefault();
 		fetch('https://murmuring-crag-50531.herokuapp.com/signin', {
 			method: 'post',
 			headers:{"Content-Type": 'application/json', 'Requested-With': 'XMLHttpRequest'},
@@ -32,7 +43,7 @@ class Signin extends Component {
         }).then(resp=> resp.json())
         .then(data =>{
             if(data.message !== 'success') {
-                alert(data.message)
+                this.setState({ message: data.message})
             } else {
                 this.props.loadUser(data)
                 
@@ -56,15 +67,21 @@ class Signin extends Component {
     <p>Please fill in this form to sign in.</p>
     <hr/>
 
+    <form onSubmit={this.onButtonSubmit}>
+        <label ><b>Email</b></label>
+        <input  onChange={this.onEmailChange} type="text" placeholder="Enter Email" name="email" required />
 
-    <label ><b>Email</b></label>
-    <input  onChange={this.onEmailChange} type="text" placeholder="Enter Email" name="email" required />
-
-    <label ><b>Password</b></label>
-    <input onChange={this.onPasswordChange} type="password" placeholder="Enter Password" name="psw" required />
-    <hr/>
-    <button onClick={this.onButtonSubmit} className="registerbtn">Sign in</button>
-  </div>
+        <label ><b>Password</b></label>
+        <input onChange={this.onPasswordChange} type="password" placeholder="Enter Password" name="psw" required />
+        <hr/>
+        {
+                this.state.message.length ?
+                <div className='error-msg'>{this.state.message}</div>
+                : null
+            }
+        <button type='submit' className="registerbtn">Sign in</button>
+        </form>
+      </div>
 
   <div className="container signin">
     <p>Don't have an account? <Link to='/register'>Register</Link>.</p>

@@ -10,9 +10,20 @@ class Register extends Component {
         this.state= {
             name: '',
 			email: '',
-			password: ''
+            password: '',
+            message: ''
         }
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(this.state.message !== '' ){
+            window.setTimeout(  () => {
+               this.setState({ message: '' })
+              } ,5000)
+  
+        }
+    }
+    
 	onNameChange = (event) => {
 		this.setState({name: event.target.value})
 	}
@@ -25,7 +36,8 @@ class Register extends Component {
 		this.setState({password: event.target.value})
     }
     
-    onButtonSubmit = () => {
+    onButtonSubmit = (e) => {
+        e.preventDefault()
 		fetch('https://murmuring-crag-50531.herokuapp.com/register', {
 			method: 'post',
 			headers:{"Content-Type": 'application/json', 'Requested-With': 'XMLHttpRequest'},
@@ -37,7 +49,7 @@ class Register extends Component {
         }).then(resp=> resp.json())
         .then(data =>{
             if(data.message !== 'success') {
-                alert(data.message)
+                this.setState({message: data.message})
             } else {
                 this.props.loadUser(data)
             }
@@ -45,6 +57,7 @@ class Register extends Component {
     }
 
     render() {
+        console.log(this.state)
 
     return (
         // <form action="http://localhost:3001/register" method='POST'>
@@ -59,16 +72,23 @@ class Register extends Component {
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
             <hr/>
+            <form onSubmit={this.onButtonSubmit}>
             <label ><b>Name</b></label>
             <input  onChange={this.onNameChange} type="text" placeholder="Enter Name" name="name" required />
 
             <label ><b>Email</b></label>
-            <input  onChange={this.onEmailChange} type="text" placeholder="Enter Email" name="email" required />
+            <input  onChange={this.onEmailChange} type="email" placeholder="Enter Email" name="email" required />
 
             <label ><b>Password</b></label>
-            <input onChange={this.onPasswordChange} type="password" placeholder="Enter Password" name="psw" required />
+            <input onChange={this.onPasswordChange} type="password" placeholder="Enter Password" name="psw" minLength='5' required />
             <hr/>
-            <button onClick={this.onButtonSubmit} className="registerbtn">Register</button>
+            {
+                this.state.message.length ?
+                <div className='error-msg'>{this.state.message}</div>
+                : null
+            }
+            <button type='submit' className="registerbtn">Register</button>
+            </form>
         </div>
 
         <div className="container signin">

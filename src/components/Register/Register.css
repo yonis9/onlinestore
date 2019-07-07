@@ -14,7 +14,7 @@
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -59,4 +59,16 @@ a {
 .signin {
   background-color: #f1f1f1;
   text-align: center;
+}
+
+.error-msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #dc3545;
+  border: 2px solid #dc3545;
+  height: 40px;
+  background: #ffced2;
+  border-radius: 5px;
 }
