@@ -100,3 +100,27 @@
       margin-bottom: 20px;
     }
   }
+
+  .error-msg-chekcout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #999999;
+    padding: 5px 0;
+    border: 2px solid #999999;
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+
+  .success-msg-chekcout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #28a745;
+    padding: 5px 0;
+    border: 2px solid #28a745;
+    background: #cdf2d5;
+    border-radius: 5px;
+  }

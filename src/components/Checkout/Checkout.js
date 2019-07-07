@@ -16,21 +16,36 @@ class CheckoutForm extends Component {
         complete: false,
         name: '',
         address: '',
-        city: ''
+        city: '',
+        resMessage: {
+            error: '',
+            message: ''
+        }
 
     };
 
   }
 
-   submit(ev) {
+  componentDidUpdate(prevProps, prevState) {
+    if(this.state.resMessage.message === 'Purchase Complete'){
+        window.setTimeout(() => {
+           this.setState({complete: true})
+                    this.props.emptyCart();
+        } ,2500)
+
+    }
+}
+
+   submit(e) {
+    e.preventDefault();
        const { name, address, city } = this.state;
-       if( name === '' || address === '' || city === '') {
-           alert('You should not leave empty fields')
-       } else {
     this.props.stripe.createToken({name:this.state.name})
     .then(data => {
         if(data.error) {
-            alert(data.error.message)
+            this.setState({resMessage: {
+                error: true,
+                message: data.error.message}
+            })
         } else {
             fetch("https://murmuring-crag-50531.herokuapp.com/charge", {
                 method: "POST",
@@ -49,21 +64,29 @@ class CheckoutForm extends Component {
               .then(response => {
                   console.log(response)
                 if (response.ok) {
-                    alert('Purchase Complete')
-                    this.setState({complete: true})
-                    this.props.emptyCart();
+                    this.setState({ resMessage: {
+                        error: false,
+                        message:'Purchase Complete'}
+                     })
                 }else if (response.msg) {
-                    alert(response.msg)
+                    this.setState({ resMessage: {
+                        error: true,
+                        message: response.msg}
+                     })
                 }
                  else{
                     console.log(response)
-                    alert("Your card number is valid, but since this is a test mode the transaction will not be executed. For payment testing, vist https://stripe.com/docs/testing and fill one of the credit card examples.")
-                };
+                    this.setState({  resMessage: {
+                        error: true,
+                        message:"Your card number is valid, but since this is a test mode the transaction will not be executed. For payment testing, vist https://stripe.com/docs/testing and fill one of the credit card examples."
+                            }
+                      })
+                    };
               })
         }
     })
 
-}
+
   }
 
 
@@ -82,6 +105,8 @@ onCityChange = (event) => {
 
 
   render() {
+      let style;
+      this.state.resMessage.error  ? style = 'error-msg-chekcout'  : style = 'success-msg-chekcout';
     if (this.state.complete) return <Redirect to="/" />;
     if (!this.props.isLogedIn) return (
         <div>
@@ -102,6 +127,7 @@ onCityChange = (event) => {
             <h3>Your Total: ${this.props.cart.totalPrice}</h3>
             <div className="row">
             <div className="col-75">
+                <form onSubmit={this.submit}>
                 <div className="container">
                     <div className="row">
                     <div className="col-50">
@@ -117,12 +143,19 @@ onCityChange = (event) => {
 
                     <div className="checkout">
                         <h3>Payment</h3>
+                        { this.state.resMessage.message.length ?
+                    <div className={style}>{this.state.resMessage.message}</div>
+                    : null
+                    }
                         <CardElement  />
                     </div>
                     
-                    <button onClick={this.submit}  className="btn"> Buy Now </button>
+                    <button type='submit'  className="btn"> Buy Now </button>
+
                 </div>
+                </form>
             </div>
+            
           </div>
         </div>
         <Footer />
