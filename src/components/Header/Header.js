@@ -2,6 +2,7 @@ import React from 'react';
 import SlideShow from '../SlideShow/SlideShow';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import s1 from '../../images/s1.jpg';
 
 const Header = ( { winWidth } ) => {
     return (<div>
@@ -22,7 +23,7 @@ const Header = ( { winWidth } ) => {
         <div className='brand-logo'>
         <img src='https://cdn.shopify.com/s/files/1/0209/0478/t/102/assets/logo.png?8912' alt='brand-logo'/>
         </div>
-        <img src='https://scontent.fhfa1-1.fna.fbcdn.net/v/t1.0-9/48368768_1927263817370723_5472541169856544768_n.jpg?_nc_cat=110&_nc_ht=scontent.fhfa1-1.fna&oh=ef627e1881908eb0c1401ca305bf2123&oe=5D57E05B' alt='header' />
+        <img src={s1} alt='header' />
         <div id='text-mobile'><h4>HIGH QULITY BEARD PRODUCTS</h4>
         <Link to="/shop"><button>SHOP NOW</button></Link>
         </div>
