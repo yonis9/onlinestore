@@ -1,3 +1,9 @@
+A beard products online store. It contains products database, shopping cart, payment simulation and profile page.
+Technologies used: ReactJS, HTML, CSS, Node.js, Express.js and MongoDB.
+
+You can see live version here: https://beardbrandstore.herokuapp.com/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
