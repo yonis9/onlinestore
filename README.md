@@ -3,6 +3,7 @@ Technologies used: ReactJS, HTML, CSS, Node.js, Express.js and MongoDB.
 
 You can see live version here: https://beardbrandstore.herokuapp.com/
 
+Back-end code: https://github.com/yonis9/api-onlinestore
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
